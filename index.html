@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim Melisa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8e7e7 0%, #f9d9d9 100%);
+            color: #5d2a42;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(93, 42, 66, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            color: #e75480;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #5d2a42;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(231, 84, 128, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23e75480" fill-opacity="0.1" d="M28.1,36.9C19,30.2,15.7,18.5,18.9,8.7c-10.3,1.5-17.7,10.9-16.7,22c1,11.1,10.6,19.2,21.7,18.5C23.2,58.1,35.5,52.6,28.1,36.9z"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: #e75480;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+        
+        .heart {
+            color: #e75480;
+            font-size: 2rem;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Love Letter Section */
+        .love-letter {
+            padding: 100px 0;
+            background: #fff;
+            position: relative;
+        }
+        
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff9fb;
+            border: 1px solid #f8d7e9;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(231, 84, 128, 0.15);
+            position: relative;
+        }
+        
+        .letter-container::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid #f8d7e9;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+        
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .letter-header h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #e75480;
+            margin-bottom: 10px;
+        }
+        
+        .letter-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .letter-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            text-align: right;
+            margin-top: 30px;
+            color: #e75480;
+        }
+        
+        /* Memories Section */
+        .memories {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #fff 0%, #fdf2f7 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #e75480;
+            display: inline-block;
+            padding: 0 20px;
+            background: linear-gradient(to bottom, #fff 0%, #fdf2f7 100%);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e75480, transparent);
+            z-index: 1;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .memory-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(231, 84, 128, 0.2);
+        }
+        
+        .memory-img {
+            height: 200px;
+            background: #f8e7e7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e75480;
+            font-size: 3rem;
+        }
+        
+        .memory-info {
+            padding: 20px;
+        }
+        
+        .memory-info h3 {
+            color: #5d2a42;
+            margin-bottom: 10px;
+        }
+        
+        .memory-info p {
+            color: #8d6b7f;
+            font-size: 0.9rem;
+        }
+        
+        /* Countdown Section */
+        .countdown {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e75480 0%, #ff85a2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .countdown-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .timer-unit {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 20px 30px;
+            border-radius: 10px;
+            min-width: 120px;
+        }
+        
+        .timer-value {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timer-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #5d2a42;
+            color: #f9d9d9;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-heart {
+            color: #e75480;
+            font-size: 2rem;
+            margin: 20px 0;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            line-height: 50px;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #e75480;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .letter-container {
+                padding: 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .timer-unit {
+                min-width: 90px;
+                padding: 15px;
+            }
+            
+            .timer-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Melisa <i class="fas fa-heart"></i></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#letter">Mektubum</a></li>
+                    <li><a href="#memories">Anılarımız</a></li>
+                    <li><a href="#countdown">Sayacımız</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Sevgilim Melisa</h1>
+            <p>Kalp atışlarımın ritmi, hayatımın en güzel melodisi...</p>
+            <div class="heart"><i class="fas fa-heart"></i></div>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="love-letter" id="letter">
+        <div class="container">
+            <div class="letter-container">
+                <div class="letter-header">
+                    <h2>Sevgili Melisa'ma</h2>
+                    <p>Her günümü aydınlatan güneşim...</p>
+                </div>
+                <div class="letter-content">
+                    <p>Gözlerine her baktığımda, içimde tarifsiz bir huzur ve mutluluk dalgası hissediyorum. Seninle geçirdiğim her an, hayatıma anlam katan bir hazine gibi. Gülüşün ruhumu aydınlatıyor, sesin en karanlık günlerimde bile bana güç veriyor.</p>
+                    <p>Seninle tanıştığım gün hayatımın dönüm noktası oldu. O andan itibaren her şey daha güzel, daha anlamlı. Birlikte yaşadığımız küçük anılar bile benim için çok kıymetli. Kahve içerken yaptığımız sohbetler, el ele yürüdüğümüz sokaklar, gökyüzüne baktığımız anlar... Hepsi birer hazine.</p>
+                    <p>Sana olan sevgim her geçen gün daha da büyüyor. Sen benim en büyük desteğim, en samimi arkadaşım ve sonsuz aşkımsın. Hayat yolculuğunda seninle birlikte yürümek en büyük mutluluğum.</p>
+                    <p>Bu site, sana olan sevgimi ifade etmenin küçük bir yolu. Seni seviyorum, her zaman seveceğim...</p>
+                </div>
+                <div class="signature">Seni seven, <br>Sevgilin</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section class="memories" id="memories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Anılarımız</h2>
+            </div>
+            <div class="gallery">
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <div class="memory-info">
+                        <h3>İlk Buluşmamız</h3>
+                        <p>O küçük kafede geçirdiğimiz unutulmaz saatler. Konuşmalarımız hiç bitmesin istemiştik.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="memory-info">
+                        <h3>Sahil Yürüyüşü</h3>
+                        <p>Gün batımında el ele yürüdüğümüz o güzel akşam. Denizin sesi ve senin yanımdaki varlığın...</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="memory-info">
+                        <h3>Doğa Kaçamağı</h3>
+                        <p>O tepede birlikte izlediğimiz manzara. Dünyayı ayaklarımızın altında hissettiğimiz o an.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="memory-info">
+                        <h3>Doğum Günü Kutlaması</h3>
+                        <p>Senin için hazırladığım sürpriz parti. Mutluluğunu görmek her şeye değerdi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown" id="countdown">
+        <div class="container">
+            <h2 class="countdown-title">Bir Sonraki Buluşmamıza</h2>
+            <div class="timer">
+                <div class="timer-unit">
+                    <div class="timer-value" id="days">14</div>
+                    <div class="timer-label">Gün</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="hours">08</div>
+                    <div class="timer-label">Saat</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="minutes">45</div>
+                    <div class="timer-label">Dakika</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="seconds">30</div>
+                    <div class="timer-label">Saniye</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">Melisa <i class="fas fa-heart"></i></div>
+            <p>Sen benim her şeyimsin. Seni seviyorum.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+            </div>
+            <div class="footer-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p>© 2023 Sevgilin Tarafından Özenle Hazırlandı</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the date we're counting down to (2 weeks from now)
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 14);
+            
+            // Update the count down every 1 second
+            const x = setInterval(function() {
+                // Get today's date and time
+                const now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                const distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Display the result
+                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+                
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML = "BULUŞMA ZAMANI!";
+                }
+            }, 1000);
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', (event) => {
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
